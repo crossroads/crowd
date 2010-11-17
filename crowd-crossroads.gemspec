@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     "History.txt",
     "README.rdoc",
     "Rakefile",
-    "crowd-stefanwille.gemspec",
+    "crowd-crossroads.gemspec",
     "demo/crowd_demo.rb",
     "lib/crowd.rb",
     "lib/crowd/soap/SecurityServerClient.rb",
