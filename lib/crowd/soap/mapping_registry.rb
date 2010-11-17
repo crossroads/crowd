@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), 'default.rb')
 require 'soap/mapping'
 
 module DefaultMappingRegistry
+  include CrowdDefault
   EncodedRegistry = ::SOAP::Mapping::EncodedRegistry.new
   LiteralRegistry = ::SOAP::Mapping::LiteralRegistry.new
   NsAuthenticationIntegrationCrowdAtlassianCom = "http://authentication.integration.crowd.atlassian.com"
@@ -35,7 +36,7 @@ module DefaultMappingRegistry
     :class => ArrayOfValidationFactor,
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ArrayOfValidationFactor"),
     :schema_element => [
-      ["validationFactor", ["ValidationFactor[]", XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ValidationFactor")], [0, nil]]
+      ["validationFactor", ["CrowdDefault::ValidationFactor[]", XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ValidationFactor")], [0, nil]]
     ]
   )
 
@@ -53,9 +54,9 @@ module DefaultMappingRegistry
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "UserAuthenticationContext"),
     :schema_element => [
       ["application", "SOAP::SOAPString", [0, 1]],
-      ["credential", "PasswordCredential", [0, 1]],
+      ["credential", "CrowdDefault::PasswordCredential", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["validationFactors", "ArrayOfValidationFactor", [0, 1]]
+      ["validationFactors", "CrowdDefault::ArrayOfValidationFactor", [0, 1]]
     ]
   )
 
@@ -63,9 +64,9 @@ module DefaultMappingRegistry
     :class => ApplicationAuthenticationContext,
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ApplicationAuthenticationContext"),
     :schema_element => [
-      ["credential", "PasswordCredential", [0, 1]],
+      ["credential", "CrowdDefault::PasswordCredential", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["validationFactors", "ArrayOfValidationFactor", [0, 1]]
+      ["validationFactors", "CrowdDefault::ArrayOfValidationFactor", [0, 1]]
     ]
   )
 
@@ -81,7 +82,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPNestableGroup,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPNestableGroup"),
     :schema_element => [
-      ["sOAPNestableGroup", ["SOAPNestableGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPNestableGroup")], [0, nil]]
+      ["sOAPNestableGroup", ["CrowdDefault::SOAPNestableGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPNestableGroup")], [0, nil]]
     ]
   )
 
@@ -91,11 +92,11 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
-      ["groupMembers", "ArrayOfString", [0, 1]],
+      ["groupMembers", "CrowdDefault::ArrayOfString", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
@@ -105,7 +106,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPAttribute,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPAttribute"),
     :schema_element => [
-      ["sOAPAttribute", ["SOAPAttribute[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute")], [0, nil]]
+      ["sOAPAttribute", ["CrowdDefault::SOAPAttribute[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute")], [0, nil]]
     ]
   )
 
@@ -114,7 +115,7 @@ module DefaultMappingRegistry
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute"),
     :schema_element => [
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["values", "ArrayOfString", [0, 1]]
+      ["values", "CrowdDefault::ArrayOfString", [0, 1]]
     ]
   )
 
@@ -124,12 +125,12 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
-      ["members", "ArrayOfString", [0, 1]],
+      ["members", "CrowdDefault::ArrayOfString", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -140,7 +141,7 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
@@ -162,7 +163,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSearchRestriction,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSearchRestriction"),
     :schema_element => [
-      ["searchRestriction", ["SearchRestriction[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SearchRestriction")], [0, nil]]
+      ["searchRestriction", ["CrowdDefault::SearchRestriction[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SearchRestriction")], [0, nil]]
     ]
   )
 
@@ -179,7 +180,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPGroup,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPGroup"),
     :schema_element => [
-      ["sOAPGroup", ["SOAPGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPGroup")], [0, nil]]
+      ["sOAPGroup", ["CrowdDefault::SOAPGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPGroup")], [0, nil]]
     ]
   )
 
@@ -189,12 +190,12 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
-      ["members", "ArrayOfString", [0, 1]],
+      ["members", "CrowdDefault::ArrayOfString", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -203,7 +204,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPPrincipalWithCredential,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPPrincipalWithCredential"),
     :schema_element => [
-      ["sOAPPrincipalWithCredential", ["SOAPPrincipalWithCredential[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential")], [0, nil]]
+      ["sOAPPrincipalWithCredential", ["CrowdDefault::SOAPPrincipalWithCredential[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential")], [0, nil]]
     ]
   )
 
@@ -211,8 +212,8 @@ module DefaultMappingRegistry
     :class => SOAPPrincipalWithCredential,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential"),
     :schema_element => [
-      ["passwordCredential", "PasswordCredential", [0, 1]],
-      ["principal", "SOAPPrincipal", [0, 1]]
+      ["passwordCredential", "CrowdDefault::PasswordCredential", [0, 1]],
+      ["principal", "CrowdDefault::SOAPPrincipal", [0, 1]]
     ]
   )
 
@@ -220,7 +221,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPRole,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPRole"),
     :schema_element => [
-      ["sOAPRole", ["SOAPRole[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPRole")], [0, nil]]
+      ["sOAPRole", ["CrowdDefault::SOAPRole[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPRole")], [0, nil]]
     ]
   )
 
@@ -228,7 +229,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPPrincipal,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPPrincipal"),
     :schema_element => [
-      ["sOAPPrincipal", ["SOAPPrincipal[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipal")], [0, nil]]
+      ["sOAPPrincipal", ["CrowdDefault::SOAPPrincipal[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipal")], [0, nil]]
     ]
   )
 
@@ -242,7 +243,7 @@ module DefaultMappingRegistry
     :class => InvalidGroupException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidGroupException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -274,7 +275,7 @@ module DefaultMappingRegistry
     :class => InvalidUserException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidUserException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -300,7 +301,7 @@ module DefaultMappingRegistry
     :class => InactiveAccountException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InactiveAccountException"),
     :schema_element => [
-      ["user", "User", [0, 1]]
+      ["user", "CrowdDefault::User", [0, 1]]
     ]
   )
 
@@ -308,8 +309,8 @@ module DefaultMappingRegistry
     :class => BulkAddFailedException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "BulkAddFailedException"),
     :schema_element => [
-      ["existingUsers", "ArrayOfString", [0, 1]],
-      ["failedUsers", "ArrayOfString", [0, 1]]
+      ["existingUsers", "CrowdDefault::ArrayOfString", [0, 1]],
+      ["failedUsers", "CrowdDefault::ArrayOfString", [0, 1]]
     ]
   )
 
@@ -317,7 +318,7 @@ module DefaultMappingRegistry
     :class => InvalidRoleException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidRoleException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -331,7 +332,7 @@ module DefaultMappingRegistry
     :class => RemoteException,
     :schema_type => XSD::QName.new(NsRmiJava, "RemoteException"),
     :schema_element => [
-      ["cause", "Throwable", [0, 1]],
+      ["cause", "CrowdDefault::Throwable", [0, 1]],
       ["message", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -388,7 +389,7 @@ module DefaultMappingRegistry
     :class => ArrayOfValidationFactor,
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ArrayOfValidationFactor"),
     :schema_element => [
-      ["validationFactor", ["ValidationFactor[]", XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ValidationFactor")], [0, nil]]
+      ["validationFactor", ["CrowdDefault::ValidationFactor[]", XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ValidationFactor")], [0, nil]]
     ]
   )
 
@@ -406,9 +407,9 @@ module DefaultMappingRegistry
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "UserAuthenticationContext"),
     :schema_element => [
       ["application", "SOAP::SOAPString", [0, 1]],
-      ["credential", "PasswordCredential", [0, 1]],
+      ["credential", "CrowdDefault::PasswordCredential", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["validationFactors", "ArrayOfValidationFactor", [0, 1]]
+      ["validationFactors", "CrowdDefault::ArrayOfValidationFactor", [0, 1]]
     ]
   )
 
@@ -416,9 +417,9 @@ module DefaultMappingRegistry
     :class => ApplicationAuthenticationContext,
     :schema_type => XSD::QName.new(NsAuthenticationIntegrationCrowdAtlassianCom, "ApplicationAuthenticationContext"),
     :schema_element => [
-      ["credential", "PasswordCredential", [0, 1]],
+      ["credential", "CrowdDefault::PasswordCredential", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["validationFactors", "ArrayOfValidationFactor", [0, 1]]
+      ["validationFactors", "CrowdDefault::ArrayOfValidationFactor", [0, 1]]
     ]
   )
 
@@ -434,7 +435,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPNestableGroup,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPNestableGroup"),
     :schema_element => [
-      ["sOAPNestableGroup", ["SOAPNestableGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPNestableGroup")], [0, nil]]
+      ["sOAPNestableGroup", ["CrowdDefault::SOAPNestableGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPNestableGroup")], [0, nil]]
     ]
   )
 
@@ -444,11 +445,11 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
-      ["groupMembers", "ArrayOfString", [0, 1]],
+      ["groupMembers", "CrowdDefault::ArrayOfString", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
@@ -458,7 +459,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPAttribute,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPAttribute"),
     :schema_element => [
-      ["sOAPAttribute", ["SOAPAttribute[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute")], [0, nil]]
+      ["sOAPAttribute", ["CrowdDefault::SOAPAttribute[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute")], [0, nil]]
     ]
   )
 
@@ -467,7 +468,7 @@ module DefaultMappingRegistry
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPAttribute"),
     :schema_element => [
       ["name", "SOAP::SOAPString", [0, 1]],
-      ["values", "ArrayOfString", [0, 1]]
+      ["values", "CrowdDefault::ArrayOfString", [0, 1]]
     ]
   )
 
@@ -477,12 +478,12 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
-      ["members", "ArrayOfString", [0, 1]],
+      ["members", "CrowdDefault::ArrayOfString", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -493,7 +494,7 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
@@ -515,7 +516,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSearchRestriction,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSearchRestriction"),
     :schema_element => [
-      ["searchRestriction", ["SearchRestriction[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SearchRestriction")], [0, nil]]
+      ["searchRestriction", ["CrowdDefault::SearchRestriction[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SearchRestriction")], [0, nil]]
     ]
   )
 
@@ -532,7 +533,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPGroup,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPGroup"),
     :schema_element => [
-      ["sOAPGroup", ["SOAPGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPGroup")], [0, nil]]
+      ["sOAPGroup", ["CrowdDefault::SOAPGroup[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPGroup")], [0, nil]]
     ]
   )
 
@@ -542,12 +543,12 @@ module DefaultMappingRegistry
     :schema_element => [
       ["iD", ["SOAP::SOAPLong", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ID")], [0, 1]],
       ["active", "SOAP::SOAPBoolean", [0, 1]],
-      ["attributes", "ArrayOfSOAPAttribute", [0, 1]],
+      ["attributes", "CrowdDefault::ArrayOfSOAPAttribute", [0, 1]],
       ["conception", "SOAP::SOAPDateTime", [0, 1]],
       ["description", "SOAP::SOAPString", [0, 1]],
       ["directoryId", "SOAP::SOAPLong", [0, 1]],
       ["lastModified", "SOAP::SOAPDateTime", [0, 1]],
-      ["members", "ArrayOfString", [0, 1]],
+      ["members", "CrowdDefault::ArrayOfString", [0, 1]],
       ["name", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -556,7 +557,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPPrincipalWithCredential,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPPrincipalWithCredential"),
     :schema_element => [
-      ["sOAPPrincipalWithCredential", ["SOAPPrincipalWithCredential[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential")], [0, nil]]
+      ["sOAPPrincipalWithCredential", ["CrowdDefault::SOAPPrincipalWithCredential[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential")], [0, nil]]
     ]
   )
 
@@ -564,8 +565,8 @@ module DefaultMappingRegistry
     :class => SOAPPrincipalWithCredential,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipalWithCredential"),
     :schema_element => [
-      ["passwordCredential", "PasswordCredential", [0, 1]],
-      ["principal", "SOAPPrincipal", [0, 1]]
+      ["passwordCredential", "CrowdDefault::PasswordCredential", [0, 1]],
+      ["principal", "CrowdDefault::SOAPPrincipal", [0, 1]]
     ]
   )
 
@@ -573,7 +574,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPRole,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPRole"),
     :schema_element => [
-      ["sOAPRole", ["SOAPRole[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPRole")], [0, nil]]
+      ["sOAPRole", ["CrowdDefault::SOAPRole[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPRole")], [0, nil]]
     ]
   )
 
@@ -581,7 +582,7 @@ module DefaultMappingRegistry
     :class => ArrayOfSOAPPrincipal,
     :schema_type => XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "ArrayOfSOAPPrincipal"),
     :schema_element => [
-      ["sOAPPrincipal", ["SOAPPrincipal[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipal")], [0, nil]]
+      ["sOAPPrincipal", ["CrowdDefault::SOAPPrincipal[]", XSD::QName.new(NsSoapIntegrationCrowdAtlassianCom, "SOAPPrincipal")], [0, nil]]
     ]
   )
 
@@ -595,7 +596,7 @@ module DefaultMappingRegistry
     :class => InvalidGroupException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidGroupException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -627,7 +628,7 @@ module DefaultMappingRegistry
     :class => InvalidUserException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidUserException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -653,7 +654,7 @@ module DefaultMappingRegistry
     :class => InactiveAccountException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InactiveAccountException"),
     :schema_element => [
-      ["user", "User", [0, 1]]
+      ["user", "CrowdDefault::User", [0, 1]]
     ]
   )
 
@@ -661,8 +662,8 @@ module DefaultMappingRegistry
     :class => BulkAddFailedException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "BulkAddFailedException"),
     :schema_element => [
-      ["existingUsers", "ArrayOfString", [0, 1]],
-      ["failedUsers", "ArrayOfString", [0, 1]]
+      ["existingUsers", "CrowdDefault::ArrayOfString", [0, 1]],
+      ["failedUsers", "CrowdDefault::ArrayOfString", [0, 1]]
     ]
   )
 
@@ -670,7 +671,7 @@ module DefaultMappingRegistry
     :class => InvalidRoleException,
     :schema_type => XSD::QName.new(NsExceptionIntegrationCrowdAtlassianCom, "InvalidRoleException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -684,7 +685,7 @@ module DefaultMappingRegistry
     :class => RemoteException,
     :schema_type => XSD::QName.new(NsRmiJava, "RemoteException"),
     :schema_element => [
-      ["cause", "Throwable", [0, 1]],
+      ["cause", "CrowdDefault::Throwable", [0, 1]],
       ["message", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -723,7 +724,7 @@ module DefaultMappingRegistry
     :class => FindAllGroupRelationships,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllGroupRelationships"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -731,7 +732,7 @@ module DefaultMappingRegistry
     :class => FindAllGroupRelationshipsResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllGroupRelationshipsResponse"),
     :schema_element => [
-      ["out", "ArrayOfSOAPNestableGroup"]
+      ["out", "CrowdDefault::ArrayOfSOAPNestableGroup"]
     ]
   )
 
@@ -745,7 +746,7 @@ module DefaultMappingRegistry
     :class => RemoteException,
     :schema_name => XSD::QName.new(NsSecurityServer, "RemoteException"),
     :schema_element => [
-      ["cause", "Throwable", [0, 1]],
+      ["cause", "CrowdDefault::Throwable", [0, 1]],
       ["message", "SOAP::SOAPString", [0, 1]]
     ]
   )
@@ -754,8 +755,8 @@ module DefaultMappingRegistry
     :class => AddGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "addGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "SOAPGroup"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::SOAPGroup"]
     ]
   )
 
@@ -763,7 +764,7 @@ module DefaultMappingRegistry
     :class => AddGroupResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "addGroupResponse"),
     :schema_element => [
-      ["out", "SOAPGroup"]
+      ["out", "CrowdDefault::SOAPGroup"]
     ]
   )
 
@@ -771,7 +772,7 @@ module DefaultMappingRegistry
     :class => InvalidGroupException,
     :schema_name => XSD::QName.new(NsSecurityServer, "InvalidGroupException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -785,7 +786,7 @@ module DefaultMappingRegistry
     :class => AddPrincipalToRole,
     :schema_name => XSD::QName.new(NsSecurityServer, "addPrincipalToRole"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -807,7 +808,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalByToken,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalByToken"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -816,7 +817,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalByTokenResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalByTokenResponse"),
     :schema_element => [
-      ["out", "SOAPPrincipal"]
+      ["out", "CrowdDefault::SOAPPrincipal"]
     ]
   )
 
@@ -830,9 +831,9 @@ module DefaultMappingRegistry
     :class => UpdatePrincipalCredential,
     :schema_name => XSD::QName.new(NsSecurityServer, "updatePrincipalCredential"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "PasswordCredential"]
+      ["in2", "CrowdDefault::PasswordCredential"]
     ]
   )
 
@@ -852,7 +853,7 @@ module DefaultMappingRegistry
     :class => GetGrantedAuthorities,
     :schema_name => XSD::QName.new(NsSecurityServer, "getGrantedAuthorities"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -860,7 +861,7 @@ module DefaultMappingRegistry
     :class => GetGrantedAuthoritiesResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "getGrantedAuthoritiesResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -868,9 +869,9 @@ module DefaultMappingRegistry
     :class => AddPrincipal,
     :schema_name => XSD::QName.new(NsSecurityServer, "addPrincipal"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "SOAPPrincipal"],
-      ["in2", "PasswordCredential"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::SOAPPrincipal"],
+      ["in2", "CrowdDefault::PasswordCredential"]
     ]
   )
 
@@ -878,7 +879,7 @@ module DefaultMappingRegistry
     :class => AddPrincipalResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "addPrincipalResponse"),
     :schema_element => [
-      ["out", "SOAPPrincipal"]
+      ["out", "CrowdDefault::SOAPPrincipal"]
     ]
   )
 
@@ -886,7 +887,7 @@ module DefaultMappingRegistry
     :class => InvalidUserException,
     :schema_name => XSD::QName.new(NsSecurityServer, "InvalidUserException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -894,9 +895,9 @@ module DefaultMappingRegistry
     :class => AddAttributeToPrincipal,
     :schema_name => XSD::QName.new(NsSecurityServer, "addAttributeToPrincipal"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "SOAPAttribute"]
+      ["in2", "CrowdDefault::SOAPAttribute"]
     ]
   )
 
@@ -910,7 +911,7 @@ module DefaultMappingRegistry
     :class => InvalidatePrincipalToken,
     :schema_name => XSD::QName.new(NsSecurityServer, "invalidatePrincipalToken"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -925,7 +926,7 @@ module DefaultMappingRegistry
     :class => FindAllGroupNames,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllGroupNames"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -933,7 +934,7 @@ module DefaultMappingRegistry
     :class => FindAllGroupNamesResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllGroupNamesResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -941,7 +942,7 @@ module DefaultMappingRegistry
     :class => FindRoleMemberships,
     :schema_name => XSD::QName.new(NsSecurityServer, "findRoleMemberships"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -950,7 +951,7 @@ module DefaultMappingRegistry
     :class => FindRoleMembershipsResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findRoleMembershipsResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -958,7 +959,7 @@ module DefaultMappingRegistry
     :class => RemovePrincipal,
     :schema_name => XSD::QName.new(NsSecurityServer, "removePrincipal"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -973,9 +974,9 @@ module DefaultMappingRegistry
     :class => IsValidPrincipalToken,
     :schema_name => XSD::QName.new(NsSecurityServer, "isValidPrincipalToken"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "ArrayOfValidationFactor"]
+      ["in2", "CrowdDefault::ArrayOfValidationFactor"]
     ]
   )
 
@@ -997,7 +998,7 @@ module DefaultMappingRegistry
     :class => AuthenticatePrincipalSimple,
     :schema_name => XSD::QName.new(NsSecurityServer, "authenticatePrincipalSimple"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1027,7 +1028,7 @@ module DefaultMappingRegistry
     :class => InactiveAccountException,
     :schema_name => XSD::QName.new(NsSecurityServer, "InactiveAccountException"),
     :schema_element => [
-      ["user", "User", [0, 1]]
+      ["user", "CrowdDefault::User", [0, 1]]
     ]
   )
 
@@ -1035,7 +1036,7 @@ module DefaultMappingRegistry
     :class => RemoveRole,
     :schema_name => XSD::QName.new(NsSecurityServer, "removeRole"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1050,7 +1051,7 @@ module DefaultMappingRegistry
     :class => GetCookieInfo,
     :schema_name => XSD::QName.new(NsSecurityServer, "getCookieInfo"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1058,7 +1059,7 @@ module DefaultMappingRegistry
     :class => GetCookieInfoResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "getCookieInfoResponse"),
     :schema_element => [
-      ["out", "SOAPCookieInfo"]
+      ["out", "CrowdDefault::SOAPCookieInfo"]
     ]
   )
 
@@ -1066,9 +1067,9 @@ module DefaultMappingRegistry
     :class => UpdatePrincipalAttribute,
     :schema_name => XSD::QName.new(NsSecurityServer, "updatePrincipalAttribute"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "SOAPAttribute"]
+      ["in2", "CrowdDefault::SOAPAttribute"]
     ]
   )
 
@@ -1082,8 +1083,8 @@ module DefaultMappingRegistry
     :class => SearchGroups,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchGroups"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "ArrayOfSearchRestriction"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::ArrayOfSearchRestriction"]
     ]
   )
 
@@ -1091,7 +1092,7 @@ module DefaultMappingRegistry
     :class => SearchGroupsResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchGroupsResponse"),
     :schema_element => [
-      ["out", "ArrayOfSOAPGroup"]
+      ["out", "CrowdDefault::ArrayOfSOAPGroup"]
     ]
   )
 
@@ -1099,7 +1100,7 @@ module DefaultMappingRegistry
     :class => GetCacheTime,
     :schema_name => XSD::QName.new(NsSecurityServer, "getCacheTime"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1115,7 +1116,7 @@ module DefaultMappingRegistry
     :class => IsRoleMember,
     :schema_name => XSD::QName.new(NsSecurityServer, "isRoleMember"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1133,7 +1134,7 @@ module DefaultMappingRegistry
     :class => UpdateGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "updateGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"],
       ["in3", "SOAP::SOAPBoolean"]
@@ -1150,9 +1151,9 @@ module DefaultMappingRegistry
     :class => AddAttributeToGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "addAttributeToGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "SOAPAttribute"]
+      ["in2", "CrowdDefault::SOAPAttribute"]
     ]
   )
 
@@ -1166,7 +1167,7 @@ module DefaultMappingRegistry
     :class => FindAllRoleNames,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllRoleNames"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1174,7 +1175,7 @@ module DefaultMappingRegistry
     :class => FindAllRoleNamesResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllRoleNamesResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -1182,7 +1183,7 @@ module DefaultMappingRegistry
     :class => FindRoleByName,
     :schema_name => XSD::QName.new(NsSecurityServer, "findRoleByName"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1191,7 +1192,7 @@ module DefaultMappingRegistry
     :class => FindRoleByNameResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findRoleByNameResponse"),
     :schema_element => [
-      ["out", "SOAPRole"]
+      ["out", "CrowdDefault::SOAPRole"]
     ]
   )
 
@@ -1199,7 +1200,7 @@ module DefaultMappingRegistry
     :class => IsCacheEnabled,
     :schema_name => XSD::QName.new(NsSecurityServer, "isCacheEnabled"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1215,7 +1216,7 @@ module DefaultMappingRegistry
     :class => FindGroupByName,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupByName"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1224,7 +1225,7 @@ module DefaultMappingRegistry
     :class => FindGroupByNameResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupByNameResponse"),
     :schema_element => [
-      ["out", "SOAPGroup"]
+      ["out", "CrowdDefault::SOAPGroup"]
     ]
   )
 
@@ -1232,7 +1233,7 @@ module DefaultMappingRegistry
     :class => FindGroupWithAttributesByName,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupWithAttributesByName"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1241,7 +1242,7 @@ module DefaultMappingRegistry
     :class => FindGroupWithAttributesByNameResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupWithAttributesByNameResponse"),
     :schema_element => [
-      ["out", "SOAPGroup"]
+      ["out", "CrowdDefault::SOAPGroup"]
     ]
   )
 
@@ -1249,7 +1250,7 @@ module DefaultMappingRegistry
     :class => RemovePrincipalFromRole,
     :schema_name => XSD::QName.new(NsSecurityServer, "removePrincipalFromRole"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1265,7 +1266,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalWithAttributesByName,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalWithAttributesByName"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1274,7 +1275,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalWithAttributesByNameResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalWithAttributesByNameResponse"),
     :schema_element => [
-      ["out", "SOAPPrincipal"]
+      ["out", "CrowdDefault::SOAPPrincipal"]
     ]
   )
 
@@ -1282,8 +1283,8 @@ module DefaultMappingRegistry
     :class => AuthenticatePrincipal,
     :schema_name => XSD::QName.new(NsSecurityServer, "authenticatePrincipal"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "UserAuthenticationContext"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::UserAuthenticationContext"]
     ]
   )
 
@@ -1299,7 +1300,7 @@ module DefaultMappingRegistry
     :class => FindGroupMemberships,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupMemberships"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1308,7 +1309,7 @@ module DefaultMappingRegistry
     :class => FindGroupMembershipsResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findGroupMembershipsResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -1316,7 +1317,7 @@ module DefaultMappingRegistry
     :class => AddPrincipalToGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "addPrincipalToGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1332,7 +1333,7 @@ module DefaultMappingRegistry
     :class => RemoveGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "removeGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1347,7 +1348,7 @@ module DefaultMappingRegistry
     :class => RemoveAttributeFromGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "removeAttributeFromGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1363,8 +1364,8 @@ module DefaultMappingRegistry
     :class => AddAllPrincipals,
     :schema_name => XSD::QName.new(NsSecurityServer, "addAllPrincipals"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "ArrayOfSOAPPrincipalWithCredential"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::ArrayOfSOAPPrincipalWithCredential"]
     ]
   )
 
@@ -1378,8 +1379,8 @@ module DefaultMappingRegistry
     :class => BulkAddFailedException,
     :schema_name => XSD::QName.new(NsSecurityServer, "BulkAddFailedException"),
     :schema_element => [
-      ["existingUsers", "ArrayOfString", [0, 1]],
-      ["failedUsers", "ArrayOfString", [0, 1]]
+      ["existingUsers", "CrowdDefault::ArrayOfString", [0, 1]],
+      ["failedUsers", "CrowdDefault::ArrayOfString", [0, 1]]
     ]
   )
 
@@ -1387,7 +1388,7 @@ module DefaultMappingRegistry
     :class => RemoveAttributeFromPrincipal,
     :schema_name => XSD::QName.new(NsSecurityServer, "removeAttributeFromPrincipal"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1403,8 +1404,8 @@ module DefaultMappingRegistry
     :class => AddRole,
     :schema_name => XSD::QName.new(NsSecurityServer, "addRole"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "SOAPRole"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::SOAPRole"]
     ]
   )
 
@@ -1412,7 +1413,7 @@ module DefaultMappingRegistry
     :class => AddRoleResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "addRoleResponse"),
     :schema_element => [
-      ["out", "SOAPRole"]
+      ["out", "CrowdDefault::SOAPRole"]
     ]
   )
 
@@ -1420,7 +1421,7 @@ module DefaultMappingRegistry
     :class => InvalidRoleException,
     :schema_name => XSD::QName.new(NsSecurityServer, "InvalidRoleException"),
     :schema_element => [
-      ["entity", "DirectoryEntity", [0, 1]]
+      ["entity", "CrowdDefault::DirectoryEntity", [0, 1]]
     ]
   )
 
@@ -1428,7 +1429,7 @@ module DefaultMappingRegistry
     :class => FindAllPrincipalNames,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllPrincipalNames"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1436,7 +1437,7 @@ module DefaultMappingRegistry
     :class => FindAllPrincipalNamesResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findAllPrincipalNamesResponse"),
     :schema_element => [
-      ["out", "ArrayOfString"]
+      ["out", "CrowdDefault::ArrayOfString"]
     ]
   )
 
@@ -1444,9 +1445,9 @@ module DefaultMappingRegistry
     :class => CreatePrincipalToken,
     :schema_name => XSD::QName.new(NsSecurityServer, "createPrincipalToken"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "ArrayOfValidationFactor"]
+      ["in2", "CrowdDefault::ArrayOfValidationFactor"]
     ]
   )
 
@@ -1462,8 +1463,8 @@ module DefaultMappingRegistry
     :class => SearchRoles,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchRoles"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "ArrayOfSearchRestriction"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::ArrayOfSearchRestriction"]
     ]
   )
 
@@ -1471,7 +1472,7 @@ module DefaultMappingRegistry
     :class => SearchRolesResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchRolesResponse"),
     :schema_element => [
-      ["out", "ArrayOfSOAPRole"]
+      ["out", "CrowdDefault::ArrayOfSOAPRole"]
     ]
   )
 
@@ -1479,7 +1480,7 @@ module DefaultMappingRegistry
     :class => RemovePrincipalFromGroup,
     :schema_name => XSD::QName.new(NsSecurityServer, "removePrincipalFromGroup"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1495,7 +1496,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalByName,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalByName"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1504,7 +1505,7 @@ module DefaultMappingRegistry
     :class => FindPrincipalByNameResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "findPrincipalByNameResponse"),
     :schema_element => [
-      ["out", "SOAPPrincipal"]
+      ["out", "CrowdDefault::SOAPPrincipal"]
     ]
   )
 
@@ -1512,7 +1513,7 @@ module DefaultMappingRegistry
     :class => ResetPrincipalCredential,
     :schema_name => XSD::QName.new(NsSecurityServer, "resetPrincipalCredential"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"]
     ]
   )
@@ -1533,9 +1534,9 @@ module DefaultMappingRegistry
     :class => UpdateGroupAttribute,
     :schema_name => XSD::QName.new(NsSecurityServer, "updateGroupAttribute"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
-      ["in2", "SOAPAttribute"]
+      ["in2", "CrowdDefault::SOAPAttribute"]
     ]
   )
 
@@ -1549,7 +1550,7 @@ module DefaultMappingRegistry
     :class => IsGroupMember,
     :schema_name => XSD::QName.new(NsSecurityServer, "isGroupMember"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
+      ["in0", "CrowdDefault::AuthenticatedToken"],
       ["in1", "SOAP::SOAPString"],
       ["in2", "SOAP::SOAPString"]
     ]
@@ -1567,8 +1568,8 @@ module DefaultMappingRegistry
     :class => SearchPrincipals,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchPrincipals"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"],
-      ["in1", "ArrayOfSearchRestriction"]
+      ["in0", "CrowdDefault::AuthenticatedToken"],
+      ["in1", "CrowdDefault::ArrayOfSearchRestriction"]
     ]
   )
 
@@ -1576,7 +1577,7 @@ module DefaultMappingRegistry
     :class => SearchPrincipalsResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "searchPrincipalsResponse"),
     :schema_element => [
-      ["out", "ArrayOfSOAPPrincipal"]
+      ["out", "CrowdDefault::ArrayOfSOAPPrincipal"]
     ]
   )
 
@@ -1584,7 +1585,7 @@ module DefaultMappingRegistry
     :class => GetDomain,
     :schema_name => XSD::QName.new(NsSecurityServer, "getDomain"),
     :schema_element => [
-      ["in0", "AuthenticatedToken"]
+      ["in0", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 
@@ -1600,7 +1601,7 @@ module DefaultMappingRegistry
     :class => AuthenticateApplication,
     :schema_name => XSD::QName.new(NsSecurityServer, "authenticateApplication"),
     :schema_element => [
-      ["in0", "ApplicationAuthenticationContext"]
+      ["in0", "CrowdDefault::ApplicationAuthenticationContext"]
     ]
   )
 
@@ -1608,7 +1609,7 @@ module DefaultMappingRegistry
     :class => AuthenticateApplicationResponse,
     :schema_name => XSD::QName.new(NsSecurityServer, "authenticateApplicationResponse"),
     :schema_element => [
-      ["out", "AuthenticatedToken"]
+      ["out", "CrowdDefault::AuthenticatedToken"]
     ]
   )
 end

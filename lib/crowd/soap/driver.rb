@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), 'mapping_registry.rb')
 require 'soap/rpc/driver'
 
 class SecurityServerPortType < ::SOAP::RPC::Driver
+  include CrowdDefault
   DefaultEndpointUrl = "http://localhost:8095/crowd/services/SecurityServer"
 
   Methods = [

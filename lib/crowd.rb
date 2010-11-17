@@ -21,6 +21,7 @@ class Crowd
   # shortcircuit Crowd::SOAP
   #
   include SOAP
+  include CrowdDefault
 
   #
   # Class variables
