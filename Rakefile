@@ -24,19 +24,19 @@ task :wsdl2ruby do
 end
 
 task :push => [:test, :build] do
-  system("gem push pkg/crowd-stefanwille-#{Crowd::Version::STRING}.gem")
+  system("gem push pkg/crowd-crossroads-#{Crowd::Version::STRING}.gem")
 end
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "crowd-stefanwille"
+    gemspec.name = "crowd-crossroads"
     gemspec.version = Crowd::Version::STRING
     gemspec.summary = "Ruby client for Atlassian Crowd 2.0"
     gemspec.description = "A client for Atlassian Crowd v2.0. Tested with Crowd 2.0.2 and 2.0.5."
-    gemspec.email = "post @nospam@ stefanwille.com"
-    gemspec.homepage = "http://github.com/stefanwille/crowd"
-    gemspec.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison"]
+    gemspec.email = "enquiries @nospam@ globalhand.org"
+    gemspec.homepage = "http://github.com/crossroads/crowd"
+    gemspec.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison", "Steve Kenworthy & Sam Scully"]
     gemspec.add_dependency('soap4r')
     gemspec.add_development_dependency('rspec')
     # Silence a warning about missing rubyforge_project

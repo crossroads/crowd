@@ -1,5 +1,7 @@
 
-== 0.5.11 / 2010-07-26
+== 0.5.12 / 2010-11-17
+* 0.5.12
+  * namespaced everything inside Crowd and CrowdDefault (breaks regeneration from wsdl)
 * 0.5.11
   * add Crowd.crowd_cookie_tokenkey for SSO
   * add Crowd.crowd_validation_factors_need_user_agent for SSO

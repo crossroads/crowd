@@ -4,9 +4,14 @@ A Ruby client for Atlassian[http://www.atlassian.com] Crowd[http://www.atlassian
 
 For a Ruby on Rails plugin with full single sign on, see this blog[http://stefanwille.com/2010/07/rails-plugin-for-single-sign-on-with-atlassian-crowd/] and Github[http://github.com/stefanwille/crowd_rails].
 
+This code was forked from stefanwille/crowd and modified to avoid namespace clashes
+with User classes.
+
 == INSTALL:
 
-  sudo gem install crowd-stefanwille
+  Add the following line to your bundle
+  
+    gem 'crowd-crossroads', :git => 'http://github.com/crossroads/crowd.git'
 
 == REQUIREMENTS:
 
@@ -108,6 +113,8 @@ Ruby client for Atlassian Crowd 2.0.5
 
 == AUTHORS:
 
+updated by Steve Kenworthy & Sam Scully <enquiries@globalhand.org>
+
 updated by Stefan Wille <post@stefanwille.com>
 
 updated by Olli Helenius <liff@iki.fi>
@@ -129,4 +136,6 @@ Updated by Evgeny Zislis, evgeny.zislis@gmail.com on 2008-05-14
 Updated by Olli Helenius <liff@iki.fi> on 2009-09-09
 
 Updated by Stefan Wille <post@stefanwille.com> on 2010-07-14
+
+Updated by Steve Kenworthy & Sam Scully on 2010-11-17
 
