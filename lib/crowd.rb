@@ -5,7 +5,7 @@
 #  I hereby place this work that I have authored into the public domain
 #  and in the process abandon all copyright protection.
 #
-require 'sha1'
+require 'digest/sha1'
 require 'base64'
 require 'rubygems'
 gem 'soap4r'
