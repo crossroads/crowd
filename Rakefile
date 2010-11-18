@@ -37,7 +37,6 @@ begin
     gemspec.email = "enquiries @nospam@ globalhand.org"
     gemspec.homepage = "http://github.com/crossroads/crowd"
     gemspec.authors = ["Stefan Wille", "Evgeny Zislis", "Jason Rimmer & Daniel Morrison", "Steve Kenworthy & Sam Scully"]
-    gemspec.add_dependency('soap4r')
     gemspec.add_development_dependency('rspec')
     # Silence a warning about missing rubyforge_project
     gemspec.rubyforge_project = "nowarning"

@@ -9,8 +9,9 @@ with User classes.
 
 == INSTALL:
 
-  Add the following line to your bundle
+  Add the following lines to your bundle
   
+    gem 'soap4r-spox', :git => 'git://github.com/spox/soap4r-spox.git' # 1.9.2 support
     gem 'crowd-crossroads', :git => 'http://github.com/crossroads/crowd.git'
 
 == REQUIREMENTS:
